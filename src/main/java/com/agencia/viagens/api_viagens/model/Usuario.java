@@ -9,9 +9,8 @@ public class Usuario {
     private Long id;
 
     private String nome;
-    private String senha; // Campo de senha adicionado
-
-    // Getters e setters
+    private String senha; 
+    
     public Long getId() {
         return id;
     }

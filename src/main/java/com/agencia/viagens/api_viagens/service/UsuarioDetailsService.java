@@ -30,7 +30,7 @@ public class UsuarioDetailsService implements UserDetailsService {
         Usuario usuario = optionalUsuario.get();
         return User.builder()
             .username(usuario.getNome())
-            .password(usuario.getSenha()) // Certifique-se de que a senha está em formato hash no banco de dados
+            .password(usuario.getSenha())
             .roles("USER")
             .build();
     }

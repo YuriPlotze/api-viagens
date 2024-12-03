@@ -12,15 +12,15 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable()) // Desabilita CSRF para APIs REST
+        http.csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(authz -> authz
-                .requestMatchers("/usuarios/**").permitAll() // Permite acesso sem autenticação
-                .anyRequest().authenticated() // Requer autenticação para outros endpoints
+                .requestMatchers("/usuarios/**").permitAll()
+                .anyRequest().authenticated()
             )
             .formLogin(form -> form
-                .permitAll() // Permite acesso à página de login sem autenticação
+                .permitAll()
             )
-            .httpBasic(); // Configuração padrão para autenticação básica
+            .httpBasic();
 
         return http.build();
     }
